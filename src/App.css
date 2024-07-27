@@ -1,0 +1,26 @@
+
+/* App.css or any global CSS file */
+body {
+  margin-left: 20px;
+  padding: 3;
+  box-sizing: border-box;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.container {
+  min-height: 100vh; /* Ensure the container takes full viewport height */
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+}
+
+.content {
+  flex: 1; /* Make the content area grow to fill available space */
+}
+
+.footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
