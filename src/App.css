@@ -1,7 +1,7 @@
 
 /* App.css or any global CSS file */
 body {
-  margin-left: 20px;
+  margin: 2px;
   padding: 3;
   box-sizing: border-box;
   overflow-x: hidden; /* Prevent horizontal scroll */
@@ -15,7 +15,8 @@ body {
 }
 
 .content {
-  flex: 1; /* Make the content area grow to fill available space */
+  flex: 1;
+  margin:5px; /* Make the content area grow to fill available space */
 }
 
 .footer {
