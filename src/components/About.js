@@ -9,7 +9,10 @@ const About = () => {
     <Section id="about">
       <Container>
         <h2>About Me</h2>
-        <p>Hi Everyone, My name is Anil yadav and I am from Kalwakurthy, Telangana. I have completed my Bachelors Degree in Electronics and Communication from Avn Institute of Engineering and Technology.</p>
+        <p>Hi,I'm B. Anil yadav, a passionate and dedicated developer with a strong background in web development.
+       
+        I have a knack for problem-solving and enjoy tackling challenging projects that push my skills to next level.
+        My expertise lies in HTML, CSS, Javascript, React, Node.js. I am constantly learning and keeping up-to-date with latest industry trends to ensure i deliver cutting-edge solutions.</p>
         <img alt = "Anil-img" src = {photo}/>
       </Container>
     </Section>
@@ -23,13 +26,21 @@ const Section = styled.section`
 `;
 
 const Container = styled.div`
+margin-left:5px;
+margin-right;5px;
   text-align: center;
   h2 {
     font-size: 2.5rem;
+    color:dark-blue;
 
   }
     p{
-    color:dark-blue;
+    color:light-blue;
+    font-weight:bold;
+    margin-left:8px;
+margin-right;8px;
+padding:10px;
+
     }
     img{
     height : 300px;

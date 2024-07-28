@@ -101,6 +101,7 @@ const ProjectCard = styled.div`
   a {
     color: #333;
     text-decoration: underline;
+    color:#ffffff;
   }
 `;
 
