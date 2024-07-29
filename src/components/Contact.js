@@ -1,51 +1,101 @@
 import React from 'react';
 import styled from 'styled-components';
+import { FaLinkedin, FaGithub, FaEnvelope, FaPhone } from 'react-icons/fa';
 
 const Contact = () => {
   return (
-    <Section id = "contact">
+    <Section id="contact">
       <Container>
-        <h2>Get in Touch</h2>
-        <p>Feel free to reach out to me through the following platforms:</p>
+        <Heading>Get in Touch</Heading>
+        <Text>
+          Feel free to reach out if you have any questions or if you'd like to work together on a project!
+        </Text>
         <ContactInfo>
-          <a href="https://www.linkedin.com/in/anil-bondala-kalwakurthy?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" />
-          </a>
-          <a href="https://github.com/anilyadav393/anilmovies/tree/main/src" target="_blank" rel="noopener noreferrer">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" />
-          </a>
-          <a href="mailto:anilbondala393@gmail.com">
-            <img src="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/112-gmail_email_mail-512.png" alt="Email" />
-          </a>
+          <InfoItem>
+            <FaPhone />
+            <InfoText>+91 9908912424</InfoText>
+          </InfoItem>
+          <InfoItem>
+            <FaEnvelope />
+            <InfoText>anilbondala393@gmail.com</InfoText>
+          </InfoItem>
         </ContactInfo>
+        <Icons>
+          <IconLink href="https://www.linkedin.com/in/anil-bondala-kalwakurthy?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer">
+            <FaLinkedin />
+          </IconLink>
+          <IconLink href="https://github.com/anilyadav393/anilmovies/tree/main/src" target="_blank" rel="noopener noreferrer">
+            <FaGithub />
+          </IconLink>
+          <IconLink href="mailto:youremail@example.com">
+            <FaEnvelope />
+          </IconLink>
+        </Icons>
       </Container>
     </Section>
   );
 };
 
 const Section = styled.section`
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #c0c0c0;
+  padding: 2rem 1rem;
+  background: #f5f5f5;
+  border-top: 2px solid #333;
 `;
 
 const Container = styled.div`
+  max-width: 600px;
+  margin: 0 auto;
   text-align: center;
-  h2 {
-    font-size: 2.5rem;
-  }
+`;
+
+const Heading = styled.h2`
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: sky-blue;
+`;
+
+const Text = styled.p`
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #555;
 `;
 
 const ContactInfo = styled.div`
+  margin-bottom: 2rem;
+`;
+
+const InfoItem = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  color: #333;
+
+  svg {
+    margin-right: 0.5rem;
+    font-size: 1.5rem;
+  }
+`;
+
+const InfoText = styled.span`
+  font-size: 1.2rem;
+`;
+
+const Icons = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
   margin-top: 1rem;
-  a {
-    margin: 0 1rem;
-    img {
-      width: 50px;
-      height: 50px;
-    }
+`;
+
+const IconLink = styled.a`
+  color: #333;
+  font-size: 2rem;
+  transition: color 0.3s, transform 0.3s;
+
+  &:hover {
+    color: #555;
+    transform: scale(1.2);
   }
 `;
 

@@ -64,6 +64,7 @@ const ProjectGrid = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 1rem;
   margin-top: 2rem;
+  margin:10px;
 `;
 const moveStars = keyframes`
   0% {
@@ -86,7 +87,7 @@ const ProjectCard = styled.div`
   
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.2s, box-shadow 0.3s;
   cursor: pointer;
   &:hover {
     transform: translateY(-10px);

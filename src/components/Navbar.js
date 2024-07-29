@@ -1,71 +1,125 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-scroll';
 import styled from 'styled-components';
-import { Link } from 'react-scroll'; // Ensure react-scroll is installed
+import { FaBars, FaTimes } from 'react-icons/fa';
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => setIsOpen(!isOpen);
+
   return (
     <Nav>
-      <NavList>
-        <NavItem>
-          <Link to="home" smooth={true} duration={500}>
-            Home
-          </Link>
-        </NavItem>
-        <NavItem>
-          <Link to="about" smooth={true} duration={500}>
-            About
-          </Link>
-        </NavItem>
-        <NavItem>
-          <Link to="projects" smooth={true} duration={500}>
-            Projects
-          </Link>
-        </NavItem>
-        <NavItem>
-          <Link to="skills" smooth={true} duration={500}>
-            Skills
-          </Link>
-        </NavItem>
-        <NavItem>
-          <Link to="contact" smooth={true} duration={500}>
-            Contact
-          </Link>
-        </NavItem>
-      </NavList>
+      <NavContainer>
+        <NavLogo to="home" smooth={true} duration={500}>
+          Anil yadav
+        </NavLogo>
+        <MobileIcon onClick={toggle}>
+          {isOpen ? <FaTimes /> : <FaBars />}
+        </MobileIcon>
+        <NavMenu isOpen={isOpen}>
+          <NavItem>
+            <NavLink to="home" smooth={true} duration={500} onClick={toggle}>
+              Home
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink to="about" smooth={true} duration={500} onClick={toggle}>
+              About
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink to="skills" smooth={true} duration={500} onClick={toggle}>
+              Skills
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink to="projects" smooth={true} duration={500} onClick={toggle}>
+              Projects
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink to="contact" smooth={true} duration={500} onClick={toggle}>
+              Contact
+            </NavLink>
+          </NavItem>
+        </NavMenu>
+      </NavContainer>
     </Nav>
   );
 };
 
-// Styled components
 const Nav = styled.nav`
-  position: fixed; /* Fixes the navbar to the top */
+  position: fixed;
   top: 0;
-  width: 100%; /* Full width */
-  background: #333; /* Background color */
+  left: 0;
+  width: 100%;
+  background: #333;
   color: #fff;
-  padding: 1rem 2rem; /* Padding */
-  z-index: 1000; /* Ensures it is above other content */
-  border-bottom: 2px solid #444; /* Optional border for styling */
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
 `;
 
-const NavList = styled.ul`
+const NavContainer = styled.div`
   display: flex;
-  justify-content: space-around; /* Distributes items evenly */
-  list-style-type: none;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+`;
+
+const NavLogo = styled(Link)`
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+`;
+
+const MobileIcon = styled.div`
+  display: none;
+
+  @media screen and (max-width: 768px) {
+    display: block;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+`;
+
+const NavMenu = styled.ul`
+  display: flex;
+  list-style: none;
   margin: 0;
   padding: 0;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 80px;
+    left: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
+    transition: all 0.3s ease;
+    background: #333;
+  }
 `;
 
 const NavItem = styled.li`
-  a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.2rem;
-    transition: color 0.3s;
-    
-    &:hover {
-      color: #ddd; /* Color on hover */
-    }
+  margin: 0 1rem;
+
+  @media screen and (max-width: 768px) {
+    margin: 2rem 0;
+    text-align: center;
+  }
+`;
+
+const NavLink = styled(Link)`
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
   }
 `;
 

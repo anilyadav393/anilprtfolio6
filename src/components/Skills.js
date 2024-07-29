@@ -42,20 +42,7 @@ const Container = styled.div`
   }
 `;
 
-const blastOff = keyframes`
-  0% {
-    transform: translateY(0);
-    background-color: #e0e0e0;
-  }
-  50% {
-    transform: translateY(-150px);
-    background-color: #e0e0e0;
-  }
-  100% {
-    transform: translateY(0);
-    background-color: #e0e0e0;
-  }
-`;
+
 
 
 const SkillGrid = styled.div`
@@ -63,7 +50,8 @@ const SkillGrid = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 1rem;
   margin-top: 2rem;
-  animation: ${blastOff} 5s infinite;
+  
+  margin:10px;
 `;
 
 const SkillCard = styled.div`
