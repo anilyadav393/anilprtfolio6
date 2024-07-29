@@ -6,7 +6,9 @@ const Contact = () => {
   return (
     <Section id="contact">
       <Container>
-        <Heading>Get in Touch</Heading>
+        <Heading>Get in  
+          <span>Touch</span>
+          </Heading>
         <Text>
           Feel free to reach out if you have any questions or if you'd like to work together on a project!
         </Text>
@@ -52,6 +54,9 @@ const Heading = styled.h2`
   font-size: 2rem;
   margin-bottom: 1rem;
   color: sky-blue;
+  span{
+  color:blue;
+  }
 `;
 
 const Text = styled.p`

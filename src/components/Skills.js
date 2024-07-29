@@ -50,6 +50,7 @@ const SkillGrid = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 1rem;
   margin-top: 2rem;
+  justify-content: center;
   
   margin:10px;
 `;
