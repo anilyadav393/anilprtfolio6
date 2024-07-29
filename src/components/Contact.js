@@ -6,9 +6,7 @@ const Contact = () => {
   return (
     <Section id="contact">
       <Container>
-        <Heading>Get in  
-          <span>Touch</span>
-          </Heading>
+        <Heading>Contact Me</Heading>
         <Text>
           Feel free to reach out if you have any questions or if you'd like to work together on a project!
         </Text>
@@ -26,13 +24,28 @@ const Contact = () => {
           <IconLink href="https://www.linkedin.com/in/anil-bondala-kalwakurthy?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer">
             <FaLinkedin />
           </IconLink>
-          <IconLink href="https://github.com/anilyadav393/anilmovies/tree/main/src" target="_blank" rel="noopener noreferrer">
+          <IconLink href="https://github.com/anilyadav393/anilprtfolio5" target="_blank" rel="noopener noreferrer">
             <FaGithub />
           </IconLink>
           <IconLink href="mailto:youremail@example.com">
             <FaEnvelope />
           </IconLink>
         </Icons>
+        <Form>
+          <FormGroup>
+            <Label htmlFor="name">Name</Label>
+            <Input type="text" id="name" name="name" required />
+          </FormGroup>
+          <FormGroup>
+            <Label htmlFor="email">Email</Label>
+            <Input type="email" id="email" name="email" required />
+          </FormGroup>
+          <FormGroup>
+            <Label htmlFor="message">Message</Label>
+            <Textarea id="message" name="message" rows="4" required />
+          </FormGroup>
+          <Button type="submit">Send Message</Button>
+        </Form>
       </Container>
     </Section>
   );
@@ -45,7 +58,7 @@ const Section = styled.section`
 `;
 
 const Container = styled.div`
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
   text-align: center;
 `;
@@ -53,10 +66,7 @@ const Container = styled.div`
 const Heading = styled.h2`
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: sky-blue;
-  span{
-  color:blue;
-  }
+  color: #333;
 `;
 
 const Text = styled.p`
@@ -90,7 +100,7 @@ const Icons = styled.div`
   display: flex;
   justify-content: center;
   gap: 1.5rem;
-  margin-top: 1rem;
+  margin-bottom: 2rem;
 `;
 
 const IconLink = styled.a`
@@ -101,6 +111,59 @@ const IconLink = styled.a`
   &:hover {
     color: #555;
     transform: scale(1.2);
+  }
+`;
+
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+`;
+
+const FormGroup = styled.div`
+  width: 100%;
+  margin-bottom: 1rem;
+  text-align: left;
+`;
+
+const Label = styled.label`
+  font-size: 1rem;
+  color: #333;
+`;
+
+const Input = styled.input`
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+`;
+
+const Textarea = styled.textarea`
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+`;
+
+const Button = styled.button`
+  padding: 0.75rem 1.5rem;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+
+  &:hover {
+    background: #555;
   }
 `;
 

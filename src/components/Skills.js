@@ -38,6 +38,7 @@ const Section = styled.section`
 
 const Container = styled.div`
   text-align: center;
+  justify-content: center;
   h2 {
     font-size: 2.5rem;
   }
