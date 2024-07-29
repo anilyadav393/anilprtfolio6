@@ -22,6 +22,11 @@ const Projects = () => {
         name: 'Wikipedia App',
         description: 'Wikipedia purpose is to benefit readers by presenting information.',
         link: 'https://wikipediaapp393.ccbp.tech/'
+      },
+      {
+        name: 'Flip Animation',
+        description: 'It consist of different images with flip animation effect.',
+        link: 'https://byanil.ccbp.tech/'
       }
     
   ];
